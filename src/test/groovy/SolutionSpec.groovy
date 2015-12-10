@@ -45,4 +45,28 @@ public class SolutionSpec extends Specification {
         '()())'     || 5
         '())()))('  || 3
     }
+
+    void "Day 02 - I Was Told There Would Be No Math - Wrapping paper"() {
+        expect:
+        Solution.day(2, "wrappingpaper", dimension) == squarefeet
+
+        where:
+        dimension               || squarefeet
+        '2x3x4'                 || 58
+        '1x1x10'                || 43
+        '3x4x5'                 || 106
+        '2x3x4\n1x1x10\n3x4x5'  || 207
+    }
+
+    void "Day 02 - I Was Told There Would Be No Math - Ribbons"() {
+        expect:
+        Solution.day(2, "ribbons", dimensions) == length
+
+        where:
+        dimensions || length
+        '2x3x4'    || 34
+        '1x1x10'   || 14
+        '3x4x5'    || 74
+        '2x3x4\n1x1x10\n3x4x5'  || 122
+    }
 }
