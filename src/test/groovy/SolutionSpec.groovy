@@ -69,4 +69,27 @@ public class SolutionSpec extends Specification {
         '3x4x5'    || 74
         '2x3x4\n1x1x10\n3x4x5'  || 122
     }
+
+    void "Day 03 - Perfectly Spherical Houses in a Vacuum"() {
+        expect:
+        Solution.day(3, "houses", directions) == houses
+
+        where:
+        directions      || houses
+        '>'             || 2
+        '^>v<'          || 4
+        '^v^v^v^v^v'    || 2
+    }
+
+    void "Day 03 - Perfectly Spherical Houses in a Vacuum - with Robo-Santa"() {
+        expect:
+        Solution.day(3, "housesWithRoboSanta", directions) == houses
+
+        where:
+        directions      || houses
+        '^v'            || 3
+        '^>v<'          || 3
+        '^v^v^v^v^v'    || 11
+        '^vv^'          || 3
+    }
 }
