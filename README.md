@@ -12,3 +12,6 @@ Solutions to a series of code puzzles found at [adventofcode][]
 
 ## Available solutions
 `./gradlew solutions`
+
+## Personal constraint
+*If* you notice some weird code constructs, I'm trying to avoid `if` (or in groovy `?`) statements. Just for fun.
