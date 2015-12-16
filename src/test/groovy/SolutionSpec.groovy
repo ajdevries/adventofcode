@@ -130,4 +130,26 @@ public class SolutionSpec extends Specification {
         'uurcxstgmygtbstg'  || 0
         'ieodomkazucvgmuy'  || 0
     }
+
+    void "Day 06 - Probably a Fire Hazard"() {
+        expect:
+        Solution.day(6, "lights", instructions) == lights
+
+        where:
+        instructions                        || lights
+        'turn on 0,0 through 999,999'       || 1000000
+        'toggle 0,0 through 999,0'          || 1000
+        'turn off 499,499 through 500,500'  || 0
+    }
+
+    void "Day 06 - Probably a Fire Hazard - Brightness"() {
+        expect:
+        Solution.day(6, "brightness", instructions) == brightness
+
+        where:
+        instructions                        || brightness
+        'turn on 0,0 through 0,0'           || 1
+        'toggle 0,0 through 999,999'        || 2000000
+        'turn off 0,0 through 0,0'          || 0
+    }
 }
