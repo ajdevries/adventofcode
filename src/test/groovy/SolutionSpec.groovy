@@ -94,6 +94,7 @@ public class SolutionSpec extends Specification {
         '^vv^'          || 3
     }
 
+    @Ignore("Slow test")
     void "Day 04 - The Ideal Stocking Stuffer"() {
         expect:
         Solution.day(4, "mine", key) == number
@@ -105,4 +106,28 @@ public class SolutionSpec extends Specification {
 
     }
 
+    void "Day 05 - Doesn't He Have Intern-Elves For This?"() {
+        expect:
+        Solution.day(5, "nice", strings) == count
+
+        where:
+        strings             || count
+        'ugknbfddgicrmopn'  || 1
+        'aaa'               || 1
+        'jchzalrnumimnmhp'  || 0
+        'haegwjzuvuyypxyu'  || 0
+        'dvszwmarrgswjxmb'  || 0
+    }
+
+    void "Day 05 - Doesn't He Have Intern-Elves For This, But Then Harder?"() {
+        expect:
+        Solution.day(5, "nice2", strings) == count
+
+        where:
+        strings             || count
+        'qjhvhtzxzqqjkmpb'  || 1
+        'xxyxx'             || 1
+        'uurcxstgmygtbstg'  || 0
+        'ieodomkazucvgmuy'  || 0
+    }
 }
