@@ -1,3 +1,4 @@
+import spock.lang.Ignore
 import spock.lang.Specification
 
 public class SolutionSpec extends Specification {
@@ -92,4 +93,16 @@ public class SolutionSpec extends Specification {
         '^v^v^v^v^v'    || 11
         '^vv^'          || 3
     }
+
+    void "Day 04 - The Ideal Stocking Stuffer"() {
+        expect:
+        Solution.day(4, "mine", key) == number
+
+        where:
+        key       || number
+        'abcdef'  || 609043
+        'pqrstuv' || 1048970
+
+    }
+
 }
